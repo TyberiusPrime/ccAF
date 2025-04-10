@@ -65,7 +65,7 @@ class Classifier_ACTINN:
     
     # Prepare test data for predicting
     def __prep_predict_data(self, data):
-        missing = set(self.genes).difference(data.index)
+        missing = list(set(self.genes).difference(data.index))
         if len(missing)>0:
             data = pd.concat([data, pd.DataFrame(0,index=missing, columns = data.columns)])
         return data.loc[list(self.genes)]
