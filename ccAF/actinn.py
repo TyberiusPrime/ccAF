@@ -28,7 +28,8 @@ import numpy as np
 import pandas as pd
 
 # Classifier specific
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from tensorflow.python.framework import ops
 
 ###############
